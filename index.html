@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>invomiro</title>
+    <link href="assets/css/fonts.googleapis.css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/linearicons.css" rel="stylesheet">
+    <link href="assets/css/simple-line-icons.css" rel="stylesheet">
+    <link href="assets/css/ionicons.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/mlete-vertical.min.css" rel="stylesheet">
+    <link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+
+    <script src="src/js/syncfusion/ej2.min.js"></script>
+    <link href="assets/css/syncfusion/bootstrap5.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        ej.base.registerLicense('Mgo+DSMBaFt/QHNqVVhkW1pFdEBBXHxAd1p/VWJYdVt5flBPcDwsT3RfQF5jSH9Td0JnWX5eeHJUQw==;Mgo+DSMBPh8sVXJ0S0V+XE9AcVRDX3xKf0x/TGpQb19xflBPallYVBYiSV9jS31Td0RjWHhacHVVTmdbVA==;ORg4AjUWIQA/Gnt2VVhjQlFaclhJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxQdkRiWX5ZdHRURmhVU0E=;OTE1MTM3QDMyMzAyZTMzMmUzMGQxQU96Mk16c2NlUmpGdUQ5czVzdHhKWTJQaHlEQXpVVGIwSFRUSjQ2VTQ9;OTE1MTM4QDMyMzAyZTMzMmUzMFlva3ExbHVDMTZxTnprOHFBNUtBT0FPdkVuTElicUVrZjdEbmVIc0ZLQnM9;NRAiBiAaIQQuGjN/V0Z+X09EaFtFVmJLYVB3WmpQdldgdVRMZVVbQX9PIiBoS35RdUViWH9fd3BVR2BVVkRz;OTE1MTQwQDMyMzAyZTMzMmUzMEcxNXNqK05qY2NSQ3EvelFwaUg3OFJvY2RLOG1jbW1kWFFwNmUweTVtMnM9;OTE1MTQxQDMyMzAyZTMzMmUzMEgzWmh4SmJXOXFjYWM3ZkNXVlovTHVTOW1DTEFwTDBUN0d3N1NIWndFZm89;Mgo+DSMBMAY9C3t2VVhjQlFaclhJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxQdkRiWX5ZdHRUR2BYVEE=;OTE1MTQzQDMyMzAyZTMzMmUzMG5zeGpLQ3l4bFI3TnhEQXZ3SER5ZzVCanRwTTl6b0RTc0p5eUY0bjRUUFU9;OTE1MTQ0QDMyMzAyZTMzMmUzMEc2Q3hVZTF0a2NKMEJ5UDdlNmg2L3ZKRTBHM1d6T25qVTF1N3ViZGFNZ289;OTE1MTQ1QDMyMzAyZTMzMmUzMEcxNXNqK05qY2NSQ3EvelFwaUg3OFJvY2RLOG1jbW1kWFFwNmUweTVtMnM9');
+    </script>
+
+    <script src="src/js/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="src/js/mlete.js"></script>
+    <script src="src/js/demo-25.js"></script>
+
+    <script src="src/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="src/js/lib/jquery.mousewheel.min.js"></script>
+
+    <style>
+
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="mlete" class="mlete">
+        <div class="mlete-overlay-box"></div>
+        <div class="mlete-container">
+            <header class="mlete-header">
+                <div class="mlete-wrapper">
+                    <div class="mlete-left-header">
+                        <div class="mlete-logo">
+                            <a href="#"><span class="logo-icon"><i class="ion-ios-color-filter"></i></span>
+                                <span class="logo-text">invomiro<span class="hide-in-smallsize"></span></span></a>
+                        </div>
+                    </div>
+                    <div class="mlete-right-header">
+                        <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="icon-menu"></i></a></div>
+                        <div class="mlete-rl-header">
+                            <ul>
+                                <li class="icons">
+                                    <a href="javascript:void(0)"><i class="fa fa-envelope" aria-hidden="true"></i>
+                                        <span class="mlete-badge badge-success">2</span>
+                                    </a>
+                                </li>
+                                <li class="icons">
+                                    <a href="javascript:void(0)"><i class="fa fa-bell" aria-hidden="true"></i>
+                                        <span class="mlete-badge badge-danger">8</span>
+                                    </a>
+                                </li>
+                                <li class="icons">
+                                    <a href="javascript:void(0)"><i class="fa fa-tasks" aria-hidden="true"></i>
+                                        <span class="mlete-badge badge-warning">8</span>
+                                    </a>
+                                </li>
+                                <li class="icons hide-small-device">
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-rss" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mlete-rr-header">
+                            <ul>
+                                <li class="icons">
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="icons">
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="mlete-main-container">
+                <div class="mlete-wrapper">
+                    <nav class="mlete-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="mlete-inner-navbar">
+                            <div class="mlete-search">
+                                <span class="searchbar-toggle"> </span>
+                                <div class="mlete-search-box ">
+                                    <input type="text" placeholder="Search">
+                                    <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <ul class="mlete-item mlete-brand">
+                                <li class="active">
+                                    <a href="#module-dashboard">
+                                        <span class="mlete-micon"><i class="icon-speedometer"></i></span>
+                                        <span class="mlete-mtext">DashBoard</span>
+                                        <span class="mlete-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="mlete-item mlete-left-item">
+                                <li class="mlete-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="mlete-micon"><i class="icon-puzzle"></i></span>
+                                        <span class="mlete-mtext">Material Master</span>
+                                        <span class="mlete-badge badge-success">2</span>
+                                        <span class="mlete-mcaret"></span>
+                                    </a>
+                                    <ul class="mlete-submenu">
+                                        <li class=" ">
+                                            <a href="#module-catalog">
+                                                <span class="mlete-micon"><i class="icon-link"></i></span>
+                                                <span class="mlete-mtext">Catalog</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="  ">
+                                            <a href="#module-catalog-dict">
+                                                <span class="mlete-micon"><i class="icon-link"></i></span>
+                                                <span class="mlete-mtext">Catalog Dictionary</span>
+                                                <span class="mlete-badge badge-warning">New</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="#module-groupclass">
+                                                <span class="mlete-micon"><i class="icon-link"></i></span>
+                                                <span class="mlete-mtext">Group & Class</span>
+                                                <span class="mlete-badge badge-danger">New</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="#module-abbreviations">
+                                                <span class="mlete-micon"><i class="icon-link"></i></span>
+                                                <span class="mlete-mtext">Abbreviations</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="javascript:void(0)">
+                                                <span class="mlete-micon"><i class="icon-link"></i></span>
+                                                <span class="mlete-mtext">Manufacturer / Mnemonic</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="mlete-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="mlete-micon"><i class="icon-diamond"></i></span>
+                                        <span class="mlete-mtext">Asset Mgmt</span>
+                                        <span class="mlete-mcaret"></span>
+                                    </a>
+                                    <ul class="mlete-submenu">
+                                        <li class=" ">
+                                            <a href="#module-assetreg">
+                                                <span class="mlete-micon"><i class="icon-mustache"></i></span>
+                                                <span class="mlete-mtext">Asset Register</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="  ">
+                                            <a href="javascript:void(0)">
+                                                <span class="mlete-micon"><i class="icon-mustache"></i></span>
+                                                <span class="mlete-mtext">Asset Detail & Specification</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="javascript:void(0)">
+                                                <span class="mlete-micon"><i class="icon-mustache"></i></span>
+                                                <span class="mlete-mtext">Asset Drawing (2D/3D)</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="mlete-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="mlete-micon"><i class="icon-bulb"></i></span>
+                                        <span class="mlete-mtext">Inventory Mgmt</span>
+                                        <span class="mlete-badge badge-danger">New</span>
+                                        <span class="mlete-mcaret"></span>
+                                    </a>
+                                    <ul class="mlete-submenu">
+                                        <li class=" ">
+                                            <a href="javascript:void(0)">
+                                                <span class="mlete-micon"><i class="icon-cursor "></i></span>
+                                                <span class="mlete-mtext">Bootstrap Form Controls</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="  ">
+                                            <a href="javascript:void(0)">
+                                                <span class="mlete-micon"><i class="icon-cursor "></i></span>
+                                                <span class="mlete-mtext">Form Validation</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="javascript:void(0)">
+                                                <span class="mlete-micon"><i class="icon-cursor "></i></span>
+                                                <span class="mlete-mtext">Form Layouts</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="javascript:void(0)">
+                                                <span class="mlete-micon"><i class="icon-cursor"></i></span>
+                                                <span class="mlete-mtext">Form Input Mask</span>
+                                                <span class="mlete-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="mlete-item mlete-left-item">
+                                <li class=" ">
+                                    <a href="javascript:void(0)">
+                                        <span class="mlete-micon"><i class="icon-organization "></i></span>
+                                        <span class="mlete-mtext">Administrator</span>
+                                        <span class="mlete-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class=" ">
+                                    <a href="javascript:void(0)">
+                                        <span class="mlete-micon"><i class="icon-directions "></i></span>
+                                        <span class="mlete-mtext">System Statistic</span>
+                                        <span class="mlete-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- <div class="mlete-navigatio-lavel">labels</div> -->
+                        </div>
+                    </nav>
+                    <div class="mlete-content">
+                        <div class="mlete-inner-content">
+<!-- modul dashboard -->
+                            <div id="module-dashboard">
+                                <div class="row clearfix">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="content-title">
+                                            <h1 class="main-title">Main DashBoard</h1>
+                                            <div class="breadcrumb-container">
+                                                <ol class="breadcrumb">
+                                                    <li><a href="#">Home</a></li>
+                                                    <li class="active">Dashboard</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!-- modul catalog -->
+                            <div id="module-catalog">
+                                <div class="row clearfix">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="content-title">
+                                            <h1 class="main-title">Catalog</h1>
+                                            <div class="breadcrumb-container">
+                                                <ol class="breadcrumb">
+                                                    <li><a href="#">Home</a></li>
+                                                    <li><a href="#">Material Master</a></li>
+                                                    <li class="active">Catalog</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" style="color: rgb(190, 111, 37);">
+                                                    Material Master
+                                                </h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row" style="padding-bottom: 24px;">
+                                                    <div class="col-md-4 col-sm-4">
+                                                        <div id="module-catalog-search-combo"></div>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-4">
+                                                        <input id="module-catalog-search-key">
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-4"
+                                                        style="padding: 24px 15px 0px 15px; text-align: end;">
+                                                        <button id="module-catalog-search-btn"
+                                                            style="color:rgb(255, 255, 255)"><i
+                                                                class="fa fa-search"></i>
+                                                            Search</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12">
+                                                        <div id="module-catalog-grid-search"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" style="color: rgb(190, 111, 37);">
+                                                    Material Specification Data
+                                                </h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row" style="padding-bottom: 35px;">
+                                                    <div class="col-md-12 col-sm-12">
+                                                        <h4 class="panel-title">
+                                                            Selected Material Item : 0000000214 -
+                                                            WASHER,FLAT:ROUND;3/8IN - SWAGELOK - PN : 43RGF54
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 col-sm-6" style="margin-bottom: 35px;">
+                                                        <div id="module-catalog-desc-panel"></div>
+                                                        <div id="module-catalog-desc-panel_tab_desc"
+                                                            style="display:none;">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                <input
+                                                                    id="module-catalog-desc-panel-tab-desc-itemnbr"></input>
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12">
+                                                                <input
+                                                                    id="module-catalog-desc-panel-tab-desc-inc"></input>
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12">
+                                                                <input
+                                                                    id="module-catalog-desc-panel-tab-desc-stdname"></input>
+                                                            </div>
+                                                        </div>
+                                                        <div id="module-catalog-desc-panel_tab_raw"
+                                                            style="display:none;"></div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6" style="margin-bottom: 35px;">
+                                                        <div class="row"
+                                                            style="border-style: solid;border-radius: 5px; border-width: 1px; border-color: rgb(195, 195, 195); margin: 15px; height: 400px; overflow-y: auto; overflow-x: auto;">
+                                                            <div class="col-md-6 col-sm-6">
+                                                                <image id="module-catalog-image-panel"
+                                                                    src="./assets/images/pattern6.png"></image>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="margin: 15px;">
+                                                            <div style="display: flex;">
+                                                                <button id="module-catalog-image-upload-btn"
+                                                                    style="color:rgb(255, 255, 255); margin-left: 15px;"><i
+                                                                        class="fa fa-upload"></i>
+                                                                    Upload</button>
+                                                                <div style="flex: 1;"></div>
+                                                                <div class="e-btn-group" style="margin-right: 15px;">
+                                                                    <input type="radio" id="module-catalog-image-1-btn"
+                                                                        name="align" value="left" />
+                                                                    <label class="e-btn"
+                                                                        for="module-catalog-image-1-btn">image1</label>
+                                                                    <input type="radio" id="module-catalog-image-2-btn"
+                                                                        name="align" value="center" />
+                                                                    <label class="e-btn"
+                                                                        for="module-catalog-image-2-btn">image2</label>
+                                                                    <input type="radio" id="module-catalog-image-3-btn"
+                                                                        name="align" value="right" />
+                                                                    <label class="e-btn"
+                                                                        for="module-catalog-image-3-btn">image3</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 col-sm-6" style="margin-bottom: 35px;">
+                                                        <div id="module-catalog-grid-characteristic"></div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6" style="margin-bottom: 35px;">
+                                                        <div id="module-catalog-grid-pn"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 col-sm-6" style="margin-bottom: 35px;">
+                                                        <div id="module-catalog-grid-assetreg"></div>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6" style="margin-bottom: 35px;">
+                                                        <div id="module-catalog-grid-mrp"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 col-sm-6" style="margin-bottom: 35px;">
+                                                        <div id="module-catalog-grid-binloc"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding: 15px 15px 35px 15px;">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4" style="margin-bottom: 5px;">
+                                                            <div id="mmodule-catalog-status-desc"></div>
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-4" style="margin-bottom: 5px;">
+                                                            <div id="mmodule-catalog-status-characteristic"></div>
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-4" style="margin-bottom: 5px;">
+                                                            <div id="mmodule-catalog-status-asset-register"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-4" style="margin-bottom: 5px;">
+                                                            <div id="mmodule-catalog-status-partnumber"></div>
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-4" style="margin-bottom: 5px;">
+                                                            <div id="mmodule-catalog-status-mrp"></div>
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-4" style="margin-bottom: 5px;">
+                                                            <div id="mmodule-catalog-status-item"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!-- modul catalog dictionary -->
+                            <div id="module-catalog-dict">
+                                <div class="row clearfix">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="content-title">
+                                            <h1 class="main-title">Catalog Dictionary</h1>
+                                            <div class="breadcrumb-container">
+                                                <ol class="breadcrumb">
+                                                    <li><a href="#">Home</a></li>
+                                                    <li><a href="#">Material Master</a></li>
+                                                    <li class="active">Catalog Dictionary</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!-- modul groupclass -->
+                            <div id="module-groupclass">
+                                <div class="row clearfix">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="content-title">
+                                            <h1 class="main-title">Group & Class</h1>
+                                            <div class="breadcrumb-container">
+                                                <ol class="breadcrumb">
+                                                    <li><a href="#">Home</a></li>
+                                                    <li><a href="#">Material Master</a></li>
+                                                    <li class="active">Group & Class</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!-- modul abbreviations -->
+                            <div id="module-abbreviations">
+                                <div class="row clearfix">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="content-title">
+                                            <h1 class="main-title">Abbreviations</h1>
+                                            <div class="breadcrumb-container">
+                                                <ol class="breadcrumb">
+                                                    <li><a href="#">Home</a></li>
+                                                    <li><a href="#">Material Master</a></li>
+                                                    <li class="active">Abbreviations</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!-- modul asset register -->
+                            <div id="module-assetreg">
+                                <div class="row clearfix">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="content-title">
+                                            <h1 class="main-title">Asset Register</h1>
+                                            <div class="breadcrumb-container">
+                                                <ol class="breadcrumb">
+                                                    <li><a href="#">Home</a></li>
+                                                    <li><a href="#">Asset Management</a></li>
+                                                    <li class="active">Asset Register</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" style="color: rgb(190, 111, 37);">
+                                                    Asset Hierarchy
+                                                </h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12">
+                                                        <div id="module-assetreg-treegrid"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title" style="color: rgb(190, 111, 37);">
+                                                    Asset Detail Data
+                                                </h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-4">
+                                                        <input id="module-assetreg-detail-id_asset">
+                                                    </div>
+                                                    <div class="col-md-8 col-sm-8">
+                                                        <input id="module-assetreg-detail-asset_name">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-4">
+                                                        <input id="module-assetreg-detail-func_loc">
+                                                    </div>
+                                                    <div class="col-md-8 col-sm-8">
+                                                        <input id="module-assetreg-detail-func_loc_name">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12" style="margin-bottom: 35px;">
+                                                        <textarea id="module-assetreg-detail-asset_desc" rows='5' required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-8 col-sm-8" style="height: 700px;">
+                                                        <div id="module-assetreg-detail-asset_img_tab"></div>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-4">
+                                                        <div  style="margin-bottom: 10px;">Sub Asset List :</div>
+                                                        <div id="module-assetreg-detail-sub_asset_list"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script src="src/js/modules/module_dashboard.js" type="text/javascript"></script>
+<script src="src/js/modules/module_catalog.js" type="text/javascript"></script>
+<script src="src/js/modules/module_catalog_dict.js" type="text/javascript"></script>
+<script src="src/js/modules/module_groupclass.js" type="text/javascript"></script>
+<script src="src/js/modules/module_abbreviations.js" type="text/javascript"></script>
+<script src="src/js/modules/module_assetreg.js" type="text/javascript"></script>
+
+<script src="src/js/route.js"></script>
+<script src="src/js/router.js"></script>
+<script src="src/js/app-route.js" type="text/javascript"></script>
+
+</html>
