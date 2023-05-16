@@ -23,8 +23,8 @@
         ej.base.registerLicense('Mgo+DSMBaFt/QHNqVVhkW1pFdEBBXHxAd1p/VWJYdVt5flBPcDwsT3RfQF5jSH9Td0JnWX5eeHJUQw==;Mgo+DSMBPh8sVXJ0S0V+XE9AcVRDX3xKf0x/TGpQb19xflBPallYVBYiSV9jS31Td0RjWHhacHVVTmdbVA==;ORg4AjUWIQA/Gnt2VVhjQlFaclhJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxQdkRiWX5ZdHRURmhVU0E=;OTE1MTM3QDMyMzAyZTMzMmUzMGQxQU96Mk16c2NlUmpGdUQ5czVzdHhKWTJQaHlEQXpVVGIwSFRUSjQ2VTQ9;OTE1MTM4QDMyMzAyZTMzMmUzMFlva3ExbHVDMTZxTnprOHFBNUtBT0FPdkVuTElicUVrZjdEbmVIc0ZLQnM9;NRAiBiAaIQQuGjN/V0Z+X09EaFtFVmJLYVB3WmpQdldgdVRMZVVbQX9PIiBoS35RdUViWH9fd3BVR2BVVkRz;OTE1MTQwQDMyMzAyZTMzMmUzMEcxNXNqK05qY2NSQ3EvelFwaUg3OFJvY2RLOG1jbW1kWFFwNmUweTVtMnM9;OTE1MTQxQDMyMzAyZTMzMmUzMEgzWmh4SmJXOXFjYWM3ZkNXVlovTHVTOW1DTEFwTDBUN0d3N1NIWndFZm89;Mgo+DSMBMAY9C3t2VVhjQlFaclhJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxQdkRiWX5ZdHRUR2BYVEE=;OTE1MTQzQDMyMzAyZTMzMmUzMG5zeGpLQ3l4bFI3TnhEQXZ3SER5ZzVCanRwTTl6b0RTc0p5eUY0bjRUUFU9;OTE1MTQ0QDMyMzAyZTMzMmUzMEc2Q3hVZTF0a2NKMEJ5UDdlNmg2L3ZKRTBHM1d6T25qVTF1N3ViZGFNZ289;OTE1MTQ1QDMyMzAyZTMzMmUzMEcxNXNqK05qY2NSQ3EvelFwaUg3OFJvY2RLOG1jbW1kWFFwNmUweTVtMnM9');
     </script>
 
-    <script src="src/js/lib/jquery-1.12.4.min.js"
-        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="src/js/lib/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
     <script src="src/js/lib/mlete.js"></script>
     <script src="src/js/lib/mlete-config.js"></script>
 
@@ -257,7 +257,7 @@
                     </nav>
                     <div class="mlete-content">
                         <div class="mlete-inner-content">
-<!-- modul dashboard -->
+                            <!-- modul dashboard -->
                             <div id="module-dashboard">
                                 <div class="row clearfix">
                                     <div class="col-md-6 col-sm-6">
@@ -273,7 +273,7 @@
                                     </div>
                                 </div>
                             </div>
-<!-- modul catalog -->
+                            <!-- modul catalog -->
                             <div id="module-catalog">
                                 <div class="row clearfix">
                                     <div class="col-md-12 col-sm-12">
@@ -443,7 +443,7 @@
                                     </div>
                                 </div>
                             </div>
-<!-- modul catalog dictionary -->
+                            <!-- modul catalog dictionary -->
                             <div id="module-catalog-dict">
                                 <div class="row clearfix">
                                     <div class="col-md-6 col-sm-6">
@@ -460,7 +460,7 @@
                                     </div>
                                 </div>
                             </div>
-<!-- modul groupclass -->
+                            <!-- modul groupclass -->
                             <div id="module-groupclass">
                                 <div class="row clearfix">
                                     <div class="col-md-6 col-sm-6">
@@ -477,7 +477,7 @@
                                     </div>
                                 </div>
                             </div>
-<!-- modul abbreviations -->
+                            <!-- modul abbreviations -->
                             <div id="module-abbreviations">
                                 <div class="row clearfix">
                                     <div class="col-md-6 col-sm-6">
@@ -494,7 +494,7 @@
                                     </div>
                                 </div>
                             </div>
-<!-- modul asset register -->
+                            <!-- modul asset register -->
                             <div id="module-assetreg">
                                 <div class="row clearfix">
                                     <div class="col-md-6 col-sm-6">
@@ -551,15 +551,19 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12 col-sm-12" style="margin-bottom: 35px;">
-                                                        <textarea id="module-assetreg-detail-asset_desc" rows='5' required></textarea>
+                                                        <textarea id="module-assetreg-detail-asset_desc" rows='5'
+                                                            required></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-8 col-sm-8" style="height: 700px;">
-                                                        <div id="module-assetreg-detail-asset_img_tab"></div>
+                                                    <div id="container_tab" class="col-md-8 col-sm-8" style="height: 700px;">
+                                                        <div id="module-assetreg-detail-asset_img_tab">
+                                                        </div>
+                                                        <div id="module-assetreg-desc-panel_tab-3d_view" style="height: 680px;">
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-4 col-sm-4">
-                                                        <div  style="margin-bottom: 10px;">Sub Asset List :</div>
+                                                        <div style="margin-bottom: 10px;">Sub Asset List :</div>
                                                         <div id="module-assetreg-detail-sub_asset_list"></div>
                                                     </div>
                                                 </div>
@@ -587,5 +591,19 @@
 <script src="src/js/route.js"></script>
 <script src="src/js/router.js"></script>
 <script src="src/js/app-route.js" type="text/javascript"></script>
+
+<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+<script type="importmap">
+    {
+        "imports": {
+            "three": "./src/js/lib/three/three.module.js",
+            "three/addons/": "./src/js/lib/three/jsm/"
+        }
+    }
+</script>
+
+<script type="module" src="src/js/modules/module_assetreg_three.js"></script>
+
 
 </html>

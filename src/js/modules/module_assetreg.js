@@ -96,7 +96,7 @@ var module_assetreg_detail_img_tab = new ej.navigations.Tab({
       },
       {
           header: { 'text': '3D Model' },
-          content: '#module-assetreg-desc-panel_tab-3d_model'
+          content: '#module-assetreg-desc-panel_tab-3d_view'
       }
   ]
 });
