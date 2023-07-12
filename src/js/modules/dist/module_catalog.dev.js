@@ -32,7 +32,7 @@ var module_catalog_grid_search = new ej.grids.Grid({
       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
     }],
     type: 'GET',
-    url: 'http://localhost:8008/getPartmasters/',
+    url: 'https://invomiro.astoge.com:8008/getPartmasters/',
     crossDomain: true
   }).executeQuery(new ej.data.Query()).then(function (e) {
     module_catalog_grid_search.dataSource = e.result;
@@ -179,7 +179,7 @@ var module_catalog_grid_characteristic = new ej.grids.Grid({
       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
     }],
     type: 'GET',
-    url: 'http://localhost:8008/getItemCharacteristic/',
+    url: 'https://invomiro.astoge.com:8008/getItemCharacteristic/',
     crossDomain: true
   }).executeQuery(new ej.data.Query()).then(function (e) {
     module_catalog_grid_characteristic.dataSource = e.result;
@@ -211,7 +211,7 @@ var module_catalog_grid_pn = new ej.grids.Grid({
       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
     }],
     type: 'GET',
-    url: 'http://localhost:8008/getItemPartNumber/',
+    url: 'https://invomiro.astoge.com:8008/getItemPartNumber/',
     crossDomain: true
   }).executeQuery(new ej.data.Query()).then(function (e) {
     module_catalog_grid_pn.dataSource = e.result;
@@ -243,7 +243,7 @@ var module_catalog_grid_assetreg = new ej.grids.Grid({
       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
     }],
     type: 'GET',
-    url: 'http://localhost:8008/getItemAssetReg/',
+    url: 'https://invomiro.astoge.com:8008/getItemAssetReg/',
     crossDomain: true
   }).executeQuery(new ej.data.Query()).then(function (e) {
     module_catalog_grid_assetreg.dataSource = e.result;
@@ -275,7 +275,7 @@ var module_catalog_grid_mrp = new ej.grids.Grid({
       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
     }],
     type: 'GET',
-    url: 'http://localhost:8008/getItemMRP/',
+    url: 'https://invomiro.astoge.com:8008/getItemMRP/',
     crossDomain: true
   }).executeQuery(new ej.data.Query()).then(function (e) {
     module_catalog_grid_mrp.dataSource = e.result;
@@ -307,7 +307,7 @@ var module_catalog_grid_binloc = new ej.grids.Grid({
       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
     }],
     type: 'GET',
-    url: 'http://localhost:8008/getItemBinLoc/',
+    url: 'https://invomiro.astoge.com:8008/getItemBinLoc/',
     crossDomain: true
   }).executeQuery(new ej.data.Query()).then(function (e) {
     module_catalog_grid_binloc.dataSource = e.result;

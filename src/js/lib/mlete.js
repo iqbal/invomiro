@@ -806,15 +806,19 @@ $.fn.mletemenu = function (danari) {
                 dt = $("#" + armande).attr("mlete-device-type");
                 if (dt == "desktop" && tw < 1024) {
                     izaack();
+                    console.log("mode desktop");
                 } else {
                     if (dt == "phone" && tw > 768) {
                         izaack();
+                        console.log("mode phone");
                     } else {
                         if (dt == "tablet" && tw < 768) {
                             izaack();
+                            console.log("mode tablet low res");
                         } else {
                             if (dt == "tablet" && tw > 1024) {
                                 izaack();
+                                console.log("mode tablet hi res");
                             }
                         }
                     }

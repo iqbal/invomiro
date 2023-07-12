@@ -32,7 +32,7 @@ var module_catalog_grid_search = new ej.grids.Grid({
             { "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization" }
         ],
         type: 'GET',
-        url: 'http://localhost:8008/material_mgt/getPartmasters/',
+        url: 'https://invomiro.astoge.com:8008/material_mgt/getPartmasters/',
         crossDomain: true
     }).executeQuery(new ej.data.Query()).then(function (e) {
         module_catalog_grid_search.dataSource = e.result;
@@ -178,7 +178,7 @@ var module_catalog_grid_characteristic = new ej.grids.Grid({
             { "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization" }
         ],
         type: 'GET',
-        url: 'http://localhost:8008/material_mgt/getPartCharacteristic/',
+        url: 'https://invomiro.astoge.com:8008/material_mgt/getPartCharacteristic/',
         crossDomain: true
     }).executeQuery(new ej.data.Query()).then(function (e) {
         module_catalog_grid_characteristic.dataSource = e.result;
@@ -202,7 +202,7 @@ var module_catalog_grid_pn = new ej.grids.Grid({
             { "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization" }
         ],
         type: 'GET',
-        url: 'http://localhost:8008/material_mgt/getPartPN/',
+        url: 'https://invomiro.astoge.com:8008/material_mgt/getPartPN/',
         crossDomain: true
     }).executeQuery(new ej.data.Query()).then(function (e) {
         module_catalog_grid_pn.dataSource = e.result;
@@ -226,7 +226,7 @@ var module_catalog_grid_assetreg = new ej.grids.Grid({
             { "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization" }
         ],
         type: 'GET',
-        url: 'http://localhost:8008/material_mgt/getPartAssetReg/',
+        url: 'https://invomiro.astoge.com:8008/material_mgt/getPartAssetReg/',
         crossDomain: true
     }).executeQuery(new ej.data.Query()).then(function (e) {
         module_catalog_grid_assetreg.dataSource = e.result;
@@ -250,7 +250,7 @@ var module_catalog_grid_mrp = new ej.grids.Grid({
             { "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization" }
         ],
         type: 'GET',
-        url: 'http://localhost:8008/material_mgt/getPartMRP/',
+        url: 'https://invomiro.astoge.com:8008/material_mgt/getPartMRP/',
         crossDomain: true
     }).executeQuery(new ej.data.Query()).then(function (e) {
         module_catalog_grid_mrp.dataSource = e.result;
@@ -275,7 +275,7 @@ var module_catalog_grid_binloc = new ej.grids.Grid({
             { "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization" }
         ],
         type: 'GET',
-        url: 'http://localhost:8008/material_mgt/getPartBinLoc/',
+        url: 'https://invomiro.astoge.com:8008/material_mgt/getPartBinLoc/',
         crossDomain: true
     }).executeQuery(new ej.data.Query()).then(function (e) {
         module_catalog_grid_binloc.dataSource = e.result;

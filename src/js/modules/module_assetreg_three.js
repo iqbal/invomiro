@@ -1,109 +1,76 @@
-// Three.js ray.intersects with offset canvas
-
 import * as THREE from 'three';
 
-const objects = [];
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-let count = 0;
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
-const CANVAS_WIDTH = 400;
-const CANVAS_HEIGHT = 400;
+let mixer;
 
-// info
-const info = document.createElement('div');
-info.style.position = 'absolute';
-info.style.top = '30px';
-info.style.width = '100%';
-info.style.textAlign = 'center';
-info.style.color = '#f00';
-info.style.backgroundColor = 'transparent';
-info.style.zIndex = '1';
-info.style.fontFamily = 'Monospace';
-info.innerHTML = 'INTERSECT Count: ' + count;
-info.style.userSelect = "none";
-info.style.webkitUserSelect = "none";
-info.style.MozUserSelect = "none";
-document.body.appendChild(info);
+const clock = new THREE.Clock();
 
-const container = document.getElementById('module-assetreg-desc-panel_tab-3d_view');
-
-const cont_tab = document.getElementById('container_tab');
-
-document.body.appendChild(container);
-
-var rect1 = cont_tab.getBoundingClientRect();
+container_3d = document.getElementById('module-assetreg-desc-panel_tab-3d_view');
+rect1 = document.getElementById('e-content-module-assetreg-detail-asset_img_tab_2').getBoundingClientRect();
 console.log(rect1);
 
-const renderer = new THREE.WebGLRenderer();
+renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(rect1.width, rect1.height);
+renderer.setSize((rect1.width), 685);
+renderer.outputEncoding = THREE.sRGBEncoding;
+container_3d.appendChild(renderer.domElement);
 
-container.appendChild(renderer.domElement);
+const pmremGenerator = new THREE.PMREMGenerator(renderer);
 
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xbfe3dd);
+scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
 
-const camera = new THREE.PerspectiveCamera(45, rect1.width/rect1.height, 1, 1000);
-camera.position.y = 150;
-camera.position.z = 500;
-camera.lookAt(scene.position);
-scene.add(camera);
+camera = new THREE.PerspectiveCamera(40, (rect1.width) / 685, 1, 100);
+camera.position.set(5, 2, 8);
 
-scene.background = new THREE.Color( 0xffffff );
-scene.add(new THREE.AmbientLight(0x222222));
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 0.5, 0);
+controls.update();
+controls.enablePan = true;
+controls.enableDamping = true;
 
-const light = new THREE.PointLight(0xffffff, 1);
-camera.add(light);
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('src/js/lib/three/jsm/libs/draco/gltf/');
 
-const mesh = new THREE.Mesh(
-  new THREE.BoxGeometry(200, 200, 200, 1, 1, 1),
-  new THREE.MeshPhongMaterial({
-    color: 0x0080ff
-  }));
-scene.add(mesh);
-objects.push(mesh);
+const loader = new GLTFLoader();
+loader.setDRACOLoader(dracoLoader);
+loader.load('assets/3dmodels/gltf/LittlestTokyo.glb', function (gltf) {
 
-// find intersections
-const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2();
+  const model = gltf.scene;
+  model.position.set(1, 1, 0);
+  model.scale.set(0.01, 0.01, 0.01);
+  scene.add(model);
 
-// mouse listener
-document.addEventListener('mousedown', function(event) {
+  mixer = new THREE.AnimationMixer(model);
+  mixer.clipAction(gltf.animations[0]).play();
 
-  // For the following method to work correctly, set the canvas position *static*; margin > 0 and padding > 0 are OK
-  mouse.x = ((event.clientX - renderer.domElement.offsetLeft) / renderer.domElement.clientWidth) * 2 - 1;
-  mouse.y = -((event.clientY - renderer.domElement.offsetTop) / renderer.domElement.clientHeight) * 2 + 1;
+  animate();
 
-  // For this alternate method, set the canvas position *fixed*; set top > 0, set left > 0; padding must be 0; margin > 0 is OK
-  //mouse.x = ( ( event.clientX - container.offsetLeft ) / container.clientWidth ) * 2 - 1;
-  //mouse.y = - ( ( event.clientY - container.offsetTop ) / container.clientHeight ) * 2 + 1;
+}, undefined, function (e) {
 
-  raycaster.setFromCamera(mouse, camera);
+  console.error(e);
 
-  const intersects = raycaster.intersectObjects(objects);
+});
 
-  if (intersects.length > 0) {
 
-    count = count + 1;
-    info.innerHTML = 'INTERSECT Count: ' + count;
-
-  }
-
-}, false);
-
-function render() {
-
-  mesh.rotation.y += 0.01;
-
-  renderer.render(scene, camera);
-
-}
+window.onresize = function () {
+  rect1 = document.getElementById('e-content-module-assetreg-detail-asset_img_tab_2').getBoundingClientRect();
+  camera.aspect = (rect1.width) / 685;
+  camera.updateProjectionMatrix();
+  renderer.setSize((rect1.width), 685);
+};
 
 function animate() {
-
   requestAnimationFrame(animate);
-
-  render();
-
+  const delta = clock.getDelta();
+  mixer.update(delta);
+  controls.update();
+  renderer.render(scene, camera);
 }
 
-animate();

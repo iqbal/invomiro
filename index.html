@@ -16,6 +16,8 @@
     <link href="assets/css/mlete-vertical.min.css" rel="stylesheet">
     <link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
 
+    <script src="src/js/global-vars.js"></script>
+
     <script src="src/js/lib/syncfusion/ej2.min.js"></script>
     <link href="assets/css/syncfusion/bootstrap5.css" rel="stylesheet">
 
@@ -56,7 +58,8 @@
                         </div>
                     </div>
                     <div class="mlete-right-header">
-                        <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="icon-menu"></i></a></div>
+                        <div class="sidebar_toggle" onclick="resize_by_sidebar()"><a href="javascript:void(0)"><i
+                                    class="icon-menu"></i></a></div>
                         <div class="mlete-rl-header">
                             <ul>
                                 <li class="icons">
@@ -556,13 +559,30 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div id="container_tab" class="col-md-8 col-sm-8" style="height: 700px;">
-                                                        <div id="module-assetreg-detail-asset_img_tab">
+                                                    <div class="col-md-12 col-sm-12"
+                                                        id="module-assetreg-detail-asset_img_tab"
+                                                        style="margin-bottom: 35px; height: 750px;">
+                                                        <div class="e-tab-header">
+                                                            <div> image </div>
+                                                            <div> 2D Drawing </div>
+                                                            <div> 3D Model </div>
                                                         </div>
-                                                        <div id="module-assetreg-desc-panel_tab-3d_view" style="height: 680px;">
+                                                        <div class="e-content">
+                                                            <div>
+                                                                PANEL "image"
+                                                            </div>
+                                                            <div>
+                                                                PAMEL "2D Drawing"
+                                                            </div>
+                                                            <div>
+                                                                <div id="module-assetreg-desc-panel_tab-3d_view">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4 col-sm-4">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12" style="margin-bottom: 35px;">
                                                         <div style="margin-bottom: 10px;">Sub Asset List :</div>
                                                         <div id="module-assetreg-detail-sub_asset_list"></div>
                                                     </div>
@@ -604,6 +624,32 @@
 </script>
 
 <script type="module" src="src/js/modules/module_assetreg_three.js"></script>
+
+
+<script type="text/javascript">
+    function resize_by_sidebar() {
+        console.log("tombol menu dipencet")  
+        rect1 = document.getElementById('e-content-module-assetreg-detail-asset_img_tab_2').getBoundingClientRect();
+
+        if (view_3_mode == "desktop") {
+            view_3_mode = "desktop menu collapse";
+            console.log("mode", view_3_mode);
+            console.log("width", rect1.width);
+            camera.aspect = (rect1.width) / 685;
+            camera.updateProjectionMatrix();
+            renderer.setSize((rect1.width), 685);
+        } else if (view_3_mode == "desktop menu collapse") {
+            view_3_mode = "desktop";
+            console.log("mode", view_3_mode);
+            console.log("width", rect1.width);
+            camera.aspect = (rect1.width) / 685;
+            camera.updateProjectionMatrix();
+            renderer.setSize((rect1.width), 685);
+        }
+
+
+    }
+</script>
 
 
 </html>
